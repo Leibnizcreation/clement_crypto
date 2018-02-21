@@ -11,11 +11,11 @@ import setAuthorizationToken from "./component/auth"
 
 var store = createStore(allReducer);
 
-if (localStorage.jwToken) {
-    setAuthorizationToken(localStorage.jwtToken);
-    console.log(jwt.decode(localStorage.jwToken))
-    store.dispatch(setCurrentUser(jwt.decode(localStorage.jwToken)))
-}
+// if (localStorage.jwToken) {
+//     setAuthorizationToken(localStorage.jwtToken);
+//     console.log(jwt.decode(localStorage.jwToken))
+//     store.dispatch(setCurrentUser(jwt.decode(localStorage.jwToken)))
+// }
 
 ReactDOM.render(<BrowserRouter>
     <Provider store={store}>
