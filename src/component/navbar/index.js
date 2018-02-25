@@ -32,10 +32,10 @@ class Navbar extends Component {
                             <div className="left-side">
 
                                 <div id="logo">
-                                    <Link to="index.html">
+                                    <a href="/">
                                     {/* BlackBooked */}
-                                    <img src="images/logo.png" alt="" />
-                                    </Link>
+                                    <img src="../../images/logo.png" alt="" />
+                                    </a>
                                 </div>
 
                                 <div className="mmenu-trigger">
@@ -49,77 +49,76 @@ class Navbar extends Component {
                                 <nav id="navigation" className="style-1">
                                     <ul id="responsive">
 
-                                        <li><Link className="current" to="#">Home</Link>
+                                        <li><a className="current" to="#">Home</a>
                                             <ul>
-                                                <li><Link to="index.html">Home 1</Link></li>
-                                                <li><Link to="index-2.html">Home 2</Link></li>
-                                                <li><Link to="index-3.html">Home 3</Link></li>
-                                                <li><Link to="index-4.html">Home 4</Link></li>
+                                                <li><a href="index.html">About us</a></li>
+                                                <li><a href="index.html">Sitemap</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><Link to="#">Listings</Link>
+                                        <li><a href="#">Cities</a>
                                             <ul>
-                                                <li><Link to="#">List Layout</Link>
+                                                {/* <li><a href="#">List Layout</a>
                                                     <ul>
-                                                        <li><Link to="listings-list-with-sidebar.html">With Sidebar</Link></li>
-                                                        <li><Link to="listings-list-full-width.html">Full Width</Link></li>
-                                                        <li><Link to="listings-list-full-width-with-map.html">Full Width + Map</Link></li>
+                                                        <li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
+                                                        <li><a href="listings-list-full-width.html">Full Width</a></li>
+                                                        <li><a href="listings-list-full-width-with-map.html">Full Width + Map</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><Link to="#">Grid Layout</Link>
+                                                <li><a href="#">Grid Layout</a>
                                                     <ul>
-                                                        <li><Link to="listings-grid-with-sidebar-1.html">With Sidebar 1</Link></li>
-                                                        <li><Link to="listings-grid-with-sidebar-2.html">With Sidebar 2</Link></li>
-                                                        <li><Link to="listings-grid-full-width.html">Full Width</Link></li>
-                                                        <li><Link to="listings-grid-full-width-with-map.html">Full Width + Map</Link></li>
+                                                        <li><a href="listings-grid-with-sidebar-1.html">With Sidebar 1</a></li>
+                                                        <li><a href="listings-grid-with-sidebar-2.html">With Sidebar 2</a></li>
+                                                        <li><a href="listings-grid-full-width.html">Full Width</a></li>
+                                                        <li><a href="listings-grid-full-width-with-map.html">Full Width + Map</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><Link to="#">Half Screen Map</Link>
+                                                <li><a href="#">Half Screen Map</a>
                                                     <ul>
-                                                        <li><Link to="listings-half-screen-map-list.html">List Layout</Link></li>
-                                                        <li><Link to="listings-half-screen-map-grid-1.html">Grid Layout 1</Link></li>
-                                                        <li><Link to="listings-half-screen-map-grid-2.html">Grid Layout 2</Link></li>
+                                                        <li><a href="listings-half-screen-map-list.html">List Layout</a></li>
+                                                        <li><a href="listings-half-screen-map-grid-1.html">Grid Layout 1</a></li>
+                                                        <li><a href="listings-half-screen-map-grid-2.html">Grid Layout 2</a></li>
                                                     </ul>
-                                                </li>
-                                                <li><Link to="listings-single-page.html">Single Listing</Link></li>
+                                                </li> */}
+                                                <li><a href="listings-single-page.html">New York City</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><Link to="#">User Panel</Link>
+                                        <li><a href="#">Services</a>
                                             <ul>
-                                                <li><Link to="dashboard.html">Dashboard</Link></li>
-                                                <li><Link to="dashboard-messages.html">Messages</Link></li>
-                                                <li><Link to="dashboard-bookings.html">Bookings</Link></li>
-                                                <li><Link to="dashboard-my-listings.html">My Listings</Link></li>
-                                                <li><Link to="dashboard-reviews.html">Reviews</Link></li>
-                                                <li><Link to="dashboard-bookmarks.html">Bookmarks</Link></li>
-                                                <li><Link to="dashboard-add-listing.html">Add Listing</Link></li>
-                                                <li><Link to="dashboard-my-profile.html">My Profile</Link></li>
-                                                <li><Link to="dashboard-invoice.html">Invoice</Link></li>
+                                                <li><a href="Consultation">Consultation</a></li>
+                                                <li><a href="Natural Hair Services">Natural Hair Services</a></li>
+                                                <li><a href="Relaxed Hair Styles">Relaxed Hair Styles</a></li>
+                                                <li><a href="Weave">Weave</a></li>
+                                                <li><a href="Wigs">Wigs</a></li>
+                                                <li><a href="Short Hair Cuts">Short Hair Cuts</a></li>
+                                                <li><a href="Kids Hair">Kids Hair</a></li>
+                                                <li><a href="Mens Hair Style">Mens Hair Style</a></li>
+                                                <li><a href="Message/Spa Services">Message/Spa Services</a></li>
+                                                <li><a href="Clothing Styles">Clothing Styles</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><Link to="#">Pages</Link>
-                                            <ul>
-                                                <li><Link to="pages-user-profile.html">User Profile</Link></li>
-                                                <li><Link to="pages-booking.html">Booking Page</Link></li>
-                                                <li><Link to="pages-add-listing.html">Add Listing</Link></li>
-                                                <li><Link to="pages-blog.html">Blog</Link>
+                                        <li><a href="/search">Search</a>
+                                            {/* <ul>
+                                                <li><a href="pages-user-profile.html">User Profile</a></li>
+                                                <li><a href="pages-booking.html">Booking Page</a></li>
+                                                <li><a href="pages-add-listing.html">Add Listing</a></li>
+                                                <li><a href="pages-blog.html">Blog</a>
                                                     <ul>
-                                                        <li><Link to="pages-blog.html">Blog</Link></li>
-                                                        <li><Link to="pages-blog-post.html">Blog Post</Link></li>
+                                                        <li><a href="pages-blog.html">Blog</a></li>
+                                                        <li><a href="pages-blog-post.html">Blog Post</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><Link to="pages-contact.html">Contact</Link></li>
-                                                <li><Link to="pages-coming-soon.html">Coming Soon</Link></li>
-                                                <li><Link to="pages-elements.html">Elements</Link></li>
-                                                <li><Link to="pages-pricing-tables.html">Pricing Tables</Link></li>
-                                                <li><Link to="pages-typography.html">Typography</Link></li>
-                                                <li><Link to="pages-masonry-filtering.html">Masonry Filtering</Link></li>
-                                                <li><Link to="pages-404.html">404 Page</Link></li>
-                                                <li><Link to="pages-icons.html">Icons</Link></li>
-                                            </ul>
+                                                <li><a href="pages-contact.html">Contact</a></li>
+                                                <li><a href="pages-coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="pages-elements.html">Elements</a></li>
+                                                <li><a href="pages-pricing-tables.html">Pricing Tables</a></li>
+                                                <li><a href="pages-typography.html">Typography</a></li>
+                                                <li><a href="pages-masonry-filtering.html">Masonry Filtering</a></li>
+                                                <li><a href="pages-404.html">404 Page</a></li>
+                                                <li><a href="pages-icons.html">Icons</a></li>
+                                            </ul> */}
                                         </li>
 
                                     </ul>
@@ -131,8 +130,8 @@ class Navbar extends Component {
 
                             <div className="right-side">
                                 <div className="header-widget">
-                                    <Link to="#sign-in-dialog" className="sign-in popup-with-zoom-anim"><i className="sl sl-icon-login"></i> Sign In</Link>
-                                    <Link to="dashboard-add-listing.html" className="button border with-icon">Add Listing <i className="sl sl-icon-plus"></i></Link>
+                                    <a href="#sign-in-dialog" className="sign-in popup-with-zoom-anim"><i className="sl sl-icon-login"></i> Sign In</a>
+                                    <a href="/add services" className="button border with-icon">Add Services <i className="sl sl-icon-plus"></i></a>
                                 </div>
                             </div>
 
@@ -145,8 +144,8 @@ class Navbar extends Component {
                                 <div className="sign-in-form style-1">
 
                                     <ul className="tabs-nav">
-                                        <li className=""><Link to="#tab1">Log In</Link></li>
-                                        <li><Link to="#tab2">Register</Link></li>
+                                        <li className=""><a href="#tab1">Log In</a></li>
+                                        <li><a href="#tab2">Register</a></li>
                                     </ul>
 
                                     <div className="tabs-container alt">
@@ -167,7 +166,7 @@ class Navbar extends Component {
                                                         <input className="input-text" type="password" name="password" id="password" />
                                                     </label>
                                                     <span className="lost_password">
-                                                        <Link to="#" >Lost Your Password?</Link>
+                                                        <a href="#" >Lost Your Password?</a>
                                                     </span>
                                                 </p>
 

@@ -19,31 +19,66 @@ class Category extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <div className="categories-boxes-container margin-top-5 margin-bottom-30">
+                            <div className="categories-boxes-container margin-top-5 ">
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">
-                                    <i className="im im-icon-Hamburger"></i>
-                                    <h4>Eat & Drink</h4>
+                                    <i className="im im-icon-Add-UserStar"></i>
+                                    <h4>Consultation</h4>
                                 </a>
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">
-                                    <i className="im  im-icon-Sleeping"></i>
-                                    <h4>Hotels</h4>
+                                    <i className="im  im-icon-Hair"></i>
+                                    <h4>Natural Hair Services</h4>
                                 </a>
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">
-                                    <i className="im im-icon-Shopping-Bag"></i>
-                                    <h4>Shops</h4>
+                                    <i className="im im-icon-Hair-3"></i>
+                                    <h4>Relaxed Hair Styles</h4>
                                 </a>
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">
-                                    <i className="im im-icon-Cocktail"></i>
-                                    <h4>Nightlife</h4>
+                                    <i className="im im-icon-Hair-4"></i>
+                                    <h4>Weave</h4>
                                 </a>
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">
-                                    <i className="im im-icon-Electric-Guitar"></i>
-                                    <h4>Events</h4>
+                                    <i className="im im-icon-Hair"></i>
+                                    <h4>Wigs</h4>
+                                </a>
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im im-icon-Hair"></i>
+                                    <h4>Short Hair Cuts</h4>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div className="col-md-12">
+                            <div className="categories-boxes-container margin-top-5">
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im im-icon-Baby"></i>
+                                    <h4>Kids Hair</h4>
+                                </a>
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im  im-icon-Business-Man"></i>
+                                    <h4>Mens Hair Style</h4>
+                                </a>
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im im-icon-Knife"></i>
+                                    <h4>Nail Services</h4>
+                                </a>
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im  im-icon-Chair"></i>
+                                    <h4>Message/Spa Services</h4>
+                                </a>
+
+                                <a href="listings-list-with-sidebar.html" className="category-small-box">
+                                    <i className="im im-icon-Sports-Clothings2"></i>
+                                    <h4>Clothing Styles</h4>
                                 </a>
 
                                 <a href="listings-list-with-sidebar.html" className="category-small-box">

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Homepage from './component/homepage/index';
+import Search from './component/search/index';
+import Notfound from './component/notfound/index';
 // import Login from "./component/login/index"
 // import Register from "./component/register/index"
 import { connect } from "react-redux";
@@ -17,7 +19,8 @@ class Main extends Component {
                             <Homepage {...props} />
                         </div>
                     )} />
-                    {/* <Route exact path="*" component={Notfound} /> */}
+                    <Route exact path="/search" component={Search} />
+                    <Route exact path="*" component={Notfound} />
                 </Switch>
 
             </div>

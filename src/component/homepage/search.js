@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 class Search extends Component {
     render() {
         return (
@@ -10,8 +10,8 @@ class Search extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <h2>Find Nearby Attractions</h2>
-                                    <h4>Expolore top-rated attractions, activities and more</h4>
+                                    <h2>Find Nearby Services</h2>
+                                    <h4>Expolore top-rated Professional Service vendors</h4>
 
                                     <div className="main-search-input">
 
@@ -46,13 +46,14 @@ class Search extends Component {
 
 
                     <div className="video-container">
-                        <video poster="images/main-search-video-poster.jpg" loop autoPlay muted>
-                            <source src="images/main-search-video.mp4" type="video/mp4" />
+                        <video poster="images/group.jpg" loop autoPlay muted>
+                            <source src="images/Ellie-Goulding1.mp4" type="video/mp4" />
                         </video>
                     </div>
 
                 </div>
-            </div>
+            
+            </div >
         );
     }
 }
