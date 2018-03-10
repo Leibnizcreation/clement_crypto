@@ -5,11 +5,12 @@ class Footer extends Component {
         return (
             <div>
                 <div id="footer" className="dark">
-                    <div className="container">
+                    <div className="container" style={{width:"95%",margin:"auto"}}>
                         <div className="row">
                             <div className="col-md-5 col-sm-6">
-                                <img className="footer-logo" src="images/logo.png" alt="" />
-                                <br /><br />
+                                <h4>About Us</h4>
+                                {/* <img className="footer-logo" src="images/logo.png" alt="" />
+                                <br /><br /> */}
                                 <p>
                                     BlackBooked is an online destination for black professional service vendors and clients where professionals showcase their work, develop on-site personalized profiles, connect with new and existing clients and build their buisness.
                                     </p>
@@ -65,6 +66,7 @@ class Footer extends Component {
 
                 </div>
                 <div id="backtotop"><a href="#"></a></div>
+
             </div >
         );
     }
