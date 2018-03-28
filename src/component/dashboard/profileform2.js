@@ -57,7 +57,7 @@ class Profileform1 extends Component {
         return (
             <form onSubmit={this.submitform}>
 
-                <div className="my-profile">
+                {/* <div className="my-profile">
                     <label>Your Name</label>
                     <input onChange={this.typing} name="name"type="text" placeholder={this.props.user.name} />
 
@@ -80,7 +80,7 @@ class Profileform1 extends Component {
 
                     <label><i className="fa fa-google-plus"></i> Google+</label>
                     <input placeholder={`${this.props.user.google || "https://www.google.com/"}`} onChange={this.typing} name="google" type="text" />
-                </div>
+                </div> */}
 
                 <button type="submit" className="button border fw margin-top-10" name="register" >
                     {this.state.isLoading ? <span><i className="fa fa-spin fa-spinner" style={{ marginRight: "5px" }}></i> Loading</span> : " Save Changes"}

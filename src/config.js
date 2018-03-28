@@ -1,6 +1,6 @@
 
-const apiUrl =  "https://apluggserver.herokuapp.com"
-// const apiUrl =  "http://localhost:3005"
+const apiUrl =  "https://tamtamtoolsserver.herokuapp.com"
+// const apiUrl =  "http://localhost:3004"
     
 // "proxy": {
 //     "/api": {

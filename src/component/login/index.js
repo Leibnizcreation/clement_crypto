@@ -23,10 +23,10 @@ class Login extends Component {
             setTimeout(() => {
                 if (res.data.error) {
                     this.setState({ ...this.state, error: res.data.error });
-                } else if(res.data.token){
+                } else if (res.data.token) {
                     localStorage.setItem("jwToken", res.data.token);
                     setAuthorizationToken(res.data.token);
-                    window.location.assign("/dashboard")
+                    window.location.assign("/admin/dashboard")
                 }
                 this.setState({ isLoading: false })
             }, 2000);
@@ -46,37 +46,39 @@ class Login extends Component {
     render() {
         console.log(this.state)
         return (
-            <form  onSubmit={this.login} className="login">
-
-                <p className="form-row form-row-wide">
-                    <label for="username">Username:
+            <div className="row" style={{marginTop:"50px"}}>
+                <div className="col-sm-4 col-sm-offset-4">
+                    <center><h2>Admin Panel</h2></center>
+                
+                    <form onSubmit={this.login} className="login">
+                        <p className="form-row form-row-wide">
+                            <label for="username">Username:
 										            <i className="im im-icon-Male"></i>
-                        <input onChange={this.typing}  type="text" className="input-text" name="username" id="username" required />
-                    </label>
-                </p>
-
-                <p className="form-row form-row-wide">
-                    <label for="password">Password:
+                                <input onChange={this.typing} type="text" className="input-text" name="username" id="username" required />
+                            </label>
+                        </p>
+                        <p className="form-row form-row-wide">
+                            <label for="password">Password:
 										            <i className="im im-icon-Lock-2"></i>
-                        <input onChange={this.typing}  className="input-text" type="password" name="password" id="password" required />
-                    </label>
-                    <span className="lost_password">
-                        <a href="#" >Lost Your Password?</a>
-                    </span>
-                </p>
-                <p style={{ color: "#f91942", marginLeft: "3px" }}>{this.state.error.server ? <small>{this.state.error.server}</small> : null}</p>
-                <p style={{ color: "#f91942", marginLeft: "3px" }}>{this.state.error.username || this.state.error.password ? <small>{this.state.error.username}</small> : null}</p>
-                <div className="form-row">
-                    <button type="submit" className="button border margin-top-5" name="login">{this.state.isLoading?<span><i className="fa fa-spin fa-spinner" style={{marginRight:"5px"}}></i> Loading</span>:"Login"}</button>
-                    <div className="checkboxes margin-top-10">
-                        <input id="remember-me" type="checkbox" name="check" />
-                        <label for="remember-me">Remember Me</label>
-                    </div>
+                                <input onChange={this.typing} className="input-text" type="password" name="password" id="password" required />
+                            </label>
+                            <span className="lost_password">
+                                <a href="#" >Lost Your Password?</a>
+                            </span>
+                        </p>
+                        <p style={{ color: "#f91942", marginLeft: "3px" }}>{this.state.error.username ? <small>{this.state.error.username}</small> : null}</p>
+                        {/* <p style={{ color: "#f91942", marginLeft: "3px" }}>{this.state.error.username || this.state.error.password ? <small>{this.state.error.username}</small> : null}</p> */}
+                        <div className="form-row">
+                            <button type="submit" className="button border margin-top-5" name="login">{this.state.isLoading ? <span><i className="fa fa-spin fa-spinner" style={{ marginRight: "5px" }}></i> Loading</span> : "Login"}</button>
+                            <div className="checkboxes margin-top-10">
+                                <input id="remember-me" type="checkbox" name="check" />
+                                <label for="remember-me">Remember Me</label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
 
-            </form>
-      
-                                        
         );
     }
 }

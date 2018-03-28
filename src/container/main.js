@@ -13,7 +13,7 @@ class Main extends Component {
          <div>
                 <Switch>
                     <Route exact path="/" component={Hompage} />
-                    <Route exact path="/register" component={Register} />
+                    {/* <Route exact path="/register" component={Register} /> */}
                     <Route exact path="/login" component={Login} />
                     <Route path="*" component={Notfound} />
                 </Switch>
