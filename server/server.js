@@ -24,6 +24,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const publicPath = path.join(__dirname, '../build');
+console.log(publicPath)
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -39,7 +40,6 @@ app.use('/api/finance', finance);
 app.use('/api/auth', auth);
 app.use('/api/blog', blog);
 app.use('/api/admin', admin);
-
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'));
