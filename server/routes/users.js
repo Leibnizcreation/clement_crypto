@@ -283,6 +283,7 @@ router.post('/resetPassword', (req, res) => {
         auth: {
           user: "habibmail31@gmail.com", // generated ethereal user
           pass: "k1o2l3a4" // generated ethereal password
+          // pass: "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" // generated ethereal password
         }
       });
       // setup email data with unicode symbols
@@ -291,7 +292,7 @@ router.post('/resetPassword', (req, res) => {
             <p>Thank you!</p>
           `;
       const mailOptions = {
-        from: `habibmail31@gmail.com`, // sender address
+        from: `info@btcgrinders.com`, // sender address
         to: `${email}`, // list of receivers
         subject: `Password Reset`, // Subject line
         // text: `${message}`, // plain text body

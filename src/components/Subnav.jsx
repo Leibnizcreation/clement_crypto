@@ -224,7 +224,7 @@ class Subnav extends Component {
                                       <a href="/tos">Help</a>
                                     </li>
                                     <li>
-                                      <a href="/forgot-pas">Forgot Password?</a>
+                                      <a href="/forgot-password">Forgot Password?</a>
                                     </li>
                                   </ul>
                                   <p className="text-center">New User?</p>

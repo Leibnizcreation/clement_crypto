@@ -21,7 +21,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 
 const publicPath = path.join(__dirname, '../build');
 app.use(bodyParser.urlencoded({ extended: true }));

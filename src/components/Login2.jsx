@@ -21,7 +21,7 @@ const Login = () => (
           <ul className="reg-menu text-center">
             <li><a href="/contact">Contact us</a></li>
             <li><a href="/tos">Help</a></li>
-            <li><a href="/forgot-pas">Forgote Password ? </a></li>
+            <li><a href="/forgot-password">Forgot Password ? </a></li>
           </ul>
           <p className="text-center">New User?</p>
           <div className="text-center but-div">
