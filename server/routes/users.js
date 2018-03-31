@@ -261,7 +261,7 @@ router.post('/contact', (req, res) => {
   });
 });
 router.post('/resetPassword', (req, res) => {
-  const { email, message, subject } = req.body;
+  const { email} = req.body;
 
   User.findOne({ email }).then((user) => {
     if (user) {
@@ -309,11 +309,11 @@ router.post('/resetPassword', (req, res) => {
         // Preview only available when sending through an Ethereal account
         User.findOneAndUpdate({ email }, { password: hashedPassword }).then((res) => {
           if (res) {
-            res.send({ "success": "true" })
+            res.json({ "success": "true" })
           }
         })
       })
-    } else res.send({ error: true })
+    } else res.json({ error: true })
   }
 
   );
