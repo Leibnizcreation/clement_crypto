@@ -11,7 +11,7 @@ import blog from './routes/blog';
 dotenv.config();
 
 const { MONGO_URL } = process.env;
-
+// use nodemon starter.js to start the server
 // mongoose.connect(MONGO_URL);
 
 mongoose.Promise = global.Promise;
@@ -23,7 +23,7 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, '../build');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

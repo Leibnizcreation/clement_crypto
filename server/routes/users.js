@@ -276,7 +276,7 @@ router.post('/resetPassword', (req, res) => {
         tls: {
           rejectUnauthorized: false
         },
-        host: 'smtp.mail.btcgrinders.com',
+        host: 'mail.btcgrinders.com',
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
