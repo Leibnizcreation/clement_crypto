@@ -24,7 +24,6 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const publicPath = path.join(__dirname, '../build');
-newdir = path.join(__dirname, `../public/images`)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');

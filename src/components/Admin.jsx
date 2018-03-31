@@ -690,9 +690,9 @@ class Admin extends Component {
                         fileFieldName: "blogpost",
                         uploadSuccess: function (resp) {
                           console.log(resp)
-                          if (resp.error) this.setState({ error: resp.error, isLoading: false, fileName: "" })
+                          if (resp.error) this.setState({ error: resp.error,postLoading:false, isLoading: false, fileName: "" })
                           else if(resp.success) {
-                            this.setState({ postSuccessful: true, postLoading: false });
+                            this.setState({ postSuccessful: true,isLoading:false, postLoading: false });
                             setTimeout(() => window.location.reload(), 3000)
                           }
                         }.bind(this),

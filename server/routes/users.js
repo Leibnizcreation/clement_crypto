@@ -225,12 +225,12 @@ router.post('/contact', (req, res) => {
     tls: {
       rejectUnauthorized: false
     },
-    host: 'mail.btcgrinders.com',
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "support@btcgrinders.com", // generated ethereal user
-      pass: "incoming" // generated ethereal password
+      user: "habibmail31@gmail.com", // generated ethereal user
+      pass: "k1o2l3a4" // generated ethereal password
     }
   });
 
@@ -240,7 +240,7 @@ router.post('/contact', (req, res) => {
     to: `support@btcgrinders.com`, // list of receivers
     subject: `${subject}`, // Subject line
     text: `${message}`, // plain text body
-    // html: ' <body style="background:#f7f7f7"><div style="width:90%; background:#fff; margin:10px auto 20px;font-family:Verdana, Geneva, Tahoma, sans-serif"><div style="background:#F4EEE2; padding:10px;color:rgb(248, 150, 166)"><center><h3>Tamtamtools</h3></center></div><div style="padding:30px"><center><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Congratulations! your tamtamtools account has successfully been created</small></p><h2>Verify Your Email</h2><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Please click on this button below to verify your email.</small></p><p style="margin: 30px"> <a href="https://tamtamtools.herokuapp.com/verify/' + token + '" style="font-size:0.9em;text-decoration:none;color:#000;border:1px solid #777;background:transparent;padding:10px 50px;font-family:Verdana"> Verify Email</a></p></center></div><div style="background:#eee;height:2px;margin:10px 0px"></div><div style="padding:40px 20px;font-size:0.7em;color:#bbb"><center>Questions? Get your answers here: <a href="" style="color:blue">Help Center</a></a>.</center></div></div><div style="font-size:0.7em;text-align:center;color:#bbb;width:35%;margin:auto">Atavist | Brooklyn, New York, 11201 | Copyright © 2015 | All rights reserved</div></body>' // html body
+    // html: ' <body style="background:#f7f7f7"><div style="width:90%; background:#fff; margin:10px auto 20px;font-family:Verdana, Geneva, Tahoma, sans-serif"><div style="background:#F4EEE2; padding:10px;color:rgb(248, 150, 166)"><center><h3>Tamtamtools</h3></center></div><div style="padding:30px"><center><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Congratulations! your tamtamtools account has successfully been created</small></p><h2>Verify Your Email</h2><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Please click on this button below to login.</small></p><p style="margin: 30px"> <a href="https://tamtamtools.herokuapp.com/verify/' + token + '" style="font-size:0.9em;text-decoration:none;color:#000;border:1px solid #777;background:transparent;padding:10px 50px;font-family:Verdana"> Login</a></p></center></div><div style="background:#eee;height:2px;margin:10px 0px"></div><div style="padding:40px 20px;font-size:0.7em;color:#bbb"><center>Questions? Get your answers here: <a href="" style="color:blue">Help Center</a></a>.</center></div></div><div style="font-size:0.7em;text-align:center;color:#bbb;width:35%;margin:auto">Atavist | Brooklyn, New York, 11201 | Copyright © 2015 | All rights reserved</div></body>' // html body
   };
 
 
@@ -249,7 +249,7 @@ router.post('/contact', (req, res) => {
     if (error) {
       return console.log(error);
       res.json({ "error": " failed" })
-      
+
     }
     console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
@@ -273,15 +273,16 @@ router.post('/resetPassword', (req, res) => {
 
       const nodemailer = require('nodemailer');
       let transporter = nodemailer.createTransport({
+      
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
         tls: {
           rejectUnauthorized: false
         },
-        host: 'mail.btcgrinders.com',
-        port: 465,
-        secure: true, // true for 465, false for other ports
         auth: {
-          user: "support@btcgrinders.com", // generated ethereal user
-          pass: "RRRazer4444$" // generated ethereal password
+          user: "habibmail31@gmail.com", // generated ethereal user
+          pass: "k1o2l3a4" // generated ethereal password
         }
       });
       // setup email data with unicode symbols
@@ -290,13 +291,13 @@ router.post('/resetPassword', (req, res) => {
             <p>Thank you!</p>
           `;
       const mailOptions = {
-        from: `btcgrindshare@gmail.com`, // sender address
+        from: `habibmail31@gmail.com`, // sender address
         to: `${email}`, // list of receivers
         subject: `Password Reset`, // Subject line
         // text: `${message}`, // plain text body
-        html: ' <body style="background:#f7f7f7"><div style="width:90%; background:#fff; margin:10px auto 20px;font-family:Verdana, Geneva, Tahoma, sans-serif"><div style="background:#F4EEE2; padding:10px;color:rgb(248, 150, 166)"><center><h3>ClementCrypto</h3></center></div><div style="padding:30px"><center><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>You have successfully reset your password. Here is your new password for future reference</small></p><h2>' + password + '</h2><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Please click on this button below to verify your email.</small></p><p style="margin: 30px"> <a href="https://clementcrypto.herokuapp.com/login' + '" style="font-size:0.9em;text-decoration:none;color:#000;border:1px solid #777;background:transparent;padding:10px 50px;font-family:Verdana"> Verify Email</a></p></center></div><div style="background:#eee;height:2px;margin:10px 0px"></div><div style="padding:40px 20px;font-size:0.7em;color:#bbb"><center>Questions? Get your answers here: <a href="http://clementcryto.herokuapp.com:3000/contact" style="color:blue">Help Center</a></a>.</center></div></div><div style="font-size:0.7em;text-align:center;color:#bbb;width:35%;margin:auto"> All rights reserved</div></body>' // html body
-         // html body
-        
+        html: ' <body style="background:#f7f7f7"><div style="width:90%; background:#fff; margin:10px auto 20px;font-family:Verdana, Geneva, Tahoma, sans-serif"><div style="background:#F4EEE2; padding:10px;color:rgb(248, 150, 166)"><center><h3>ClementCrypto</h3></center></div><div style="padding:30px"><center><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>You have successfully reset your password. Here is your new password for future reference</small></p><h2>' + password + '</h2><p style="font-family:Verdana, Geneva, Tahoma, sans-serif"><small>Please click on this button below to login.</small></p><p style="margin: 30px"> <a href="https://clementcrypto.herokuapp.com/login' + '" style="font-size:0.9em;text-decoration:none;color:#000;border:1px solid #777;background:transparent;padding:10px 50px;font-family:Verdana"> Login</a></p></center></div><div style="background:#eee;height:2px;margin:10px 0px"></div><div style="padding:40px 20px;font-size:0.7em;color:#bbb"><center>Questions? Get your answers here: <a href="http://clementcryto.herokuapp.com:3000/contact" style="color:blue">Help Center</a></a>.</center></div></div><div style="font-size:0.7em;text-align:center;color:#bbb;width:35%;margin:auto"> All rights reserved</div></body>' // html body
+        // html body
+
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
@@ -306,15 +307,15 @@ router.post('/resetPassword', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
-      User.findOneAndUpdate({ email }, { password: hashedPassword }).then((res) => {
-        if (res) {
-          res.status(200).send({ "success": "true" })
-        }
+        User.findOneAndUpdate({ email }, { password: hashedPassword }).then((res) => {
+          if (res) {
+            res.send({ "success": "true" })
+          }
+        })
       })
-    })
-    } else res.status(404).send({error:true})
+    } else res.send({ error: true })
   }
 
-);
+  );
 })
 export default router;
