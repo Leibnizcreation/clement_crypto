@@ -307,8 +307,8 @@ router.post('/resetPassword', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
-        User.findOneAndUpdate({ email }, { password: hashedPassword }).then((res) => {
-          if (res) {
+        User.findOneAndUpdate({ email }, { password: hashedPassword }).then((pass) => {
+          if (pass) {
             res.json({ "success": "true" })
           }
         })
