@@ -35,6 +35,8 @@ router.post('/blogpost', (req, res, next) => {
        fileName = files.blogpost.name;
        time = new Date();
       newdir = path.join(__dirname, `../public/images`)
+      newdir = path.join(__dirname, `../build/images`)
+      dir2 = path.join(__dirname, `../public`)
        console.log(newdir)
        Uploadpost = new Blogpost({
         imgUrl: fileName,
@@ -46,9 +48,12 @@ router.post('/blogpost', (req, res, next) => {
       });
     })
     newform.on("end", function () {
+      
       fs.rename(tmpdir, newdir, function () {
+        fs.rename(tmpdir, dir2, function () {
+        });
+        Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
       });
-      Uploadpost.save().then().then((success) => { res.json({  success: "uploaded successfully" }) })
     })
   });
 

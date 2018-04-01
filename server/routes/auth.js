@@ -21,6 +21,7 @@ router.post('/login', (req, res) => {
   // checks the database for the user's username or email
   User.findOne({ email })
     .then((user) => {
+      
       if (!user) {
         return res.status(400).send({
           status: 400,
@@ -30,11 +31,13 @@ router.post('/login', (req, res) => {
       // validates the user's password if user is found
       if (!bcrypt.compareSync(req.body.password, user.password)) {
         // returns error on invalid login
+        
         return res.status(400).send({
           status: 400,
           message: 'Invalid credentials',
         });
       }
+      
       Tfa.findOne({ email })
         .then((tfauser) => {
           if (!tfauser || !tfauser.secret) {
