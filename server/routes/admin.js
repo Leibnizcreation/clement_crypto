@@ -29,7 +29,7 @@ router.get('/', authUserMiddleware, (req, res) => {
 router.post('/blogpost', (req, res, next) => {
     var newform = new formidable.IncomingForm();
     newform.keepExtensions = true;
-    var tmpdir,fileName,time,newdir,Uploadpost;
+    var tmpdir,fileName,time,newdir,Uploadpost,dir2;
     newform.parse(req, (err, fields, files) => {
        tmpdir = files.blogpost.path
        fileName = files.blogpost.name;
