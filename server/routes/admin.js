@@ -34,9 +34,8 @@ router.post('/blogpost', (req, res, next) => {
        tmpdir = files.blogpost.path
        fileName = files.blogpost.name;
        time = new Date();
-      newdir = path.join(__dirname, `../public/images`)
       newdir = path.join(__dirname, `../build/images`)
-      dir2 = path.join(__dirname, `../public`)
+      dir2 = path.join(__dirname, `../public/images`)
        console.log(newdir)
        Uploadpost = new Blogpost({
         imgUrl: fileName,
