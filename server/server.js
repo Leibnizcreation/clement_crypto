@@ -23,7 +23,7 @@ const app = express();
 
 const PORT = process.env.PORT || 80;
 
-const publicPath = path.join(__dirname, '../build');
+const publicPath = path.join(__dirname, './build');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
@@ -39,7 +39,7 @@ app.use('/api/auth', auth);
 app.use('/api/blog', blog);
 app.use('/api/admin', admin);
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index.html'));
+  res.sendFile(path.join(__dirname, './build/index.html'));
 });
 
 // app.get('/americas-cardroom', (req, res) => {

@@ -27,102 +27,102 @@ router.get('/', authUserMiddleware, (req, res) => {
   })
 })
 router.post('/blogpost', (req, res, next) => {
-    var newform = new formidable.IncomingForm();
-    newform.keepExtensions = true;
-    var tmpdir,fileName,time,newdir,Uploadpost,dir2;
-    newform.parse(req, (err, fields, files) => {
-       tmpdir = files.blogpost.path
-       fileName = files.blogpost.name;
-       time = new Date();
-      newdir = path.join(process.cwd(), "../build/images/" + files.blogpost.name);
-      dir2 = path.join(process.cwd(), "../public/images/" + files.blogpost.name);
-       Uploadpost = new Blogpost({
-        imgUrl: fileName,
-        date: time,
-        slug: slugify(fields.title),
-        title: fields.title,
-        category: fields.category,
-        description: fields.description
-      });
-    })
-    newform.on("end", function () {
-      console.log(newdir,tmpdir)
-      // fs.rename(tmpdir, newdir, function (err) {
-      //   if(err){
-      //     console.log(err)
-      //     res.json({ error: "upload was not successfully" })
-      //   }
-      //   else{
-      //     fs.rename(tmpdir, dir2, function (err) {
-      //       if (err) {
-      //         console.log(err)
-      //         res.json({ error: "upload was not successfully" })
-      //       }
-      //       else {
-      //         Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
-      //       }
-      //     })
-      //   }
-      // });
-      fs.rename(tmpdir, newdir, function () {
-      }); 
-      fs.rename(tmpdir, dir2, function () {
-      }); 
-      Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
-      
-    })
-
-  });
-
-  router.post('/confirm-payment', authUserMiddleware, (req, res) => {
-    const { role } = req.authenticatedUser;
-    if (role !== 1) {
-      return res.status(401).send({
-        message: 'You are not authorized to perform this operation'
-      });
-    }
-    const { id } = req.body;
-    Payout.findOne({ id }).then((payout) => {
-      if (!payout) {
-        return res.status(400)
-          .send({ message: 'Cannot find a payout with that id' });
-      }
-      Payout.update({ id }, { status: 1 })
-        .then(() => {
-          History.update({ id }, { value: 1 }).then(() => res.status(200)
-            .send({ message: 'Payment request confirmed successfully' }));
-        });
+  var newform = new formidable.IncomingForm();
+  newform.keepExtensions = true;
+  var tmpdir, fileName, time, newdir, Uploadpost, dir2;
+  newform.parse(req, (err, fields, files) => {
+    tmpdir = files.blogpost.path
+    fileName = files.blogpost.name;
+    time = new Date();
+    newdir = path.join(process.cwd(), "build/images/" + files.blogpost.name);
+    dir2 = path.join(process.cwd(), "../public/images/" + files.blogpost.name);
+    Uploadpost = new Blogpost({
+      imgUrl: fileName,
+      date: time,
+      slug: slugify(fields.title),
+      title: fields.title,
+      category: fields.category,
+      description: fields.description
     });
-  });
-
-  router.post('/confirm-site', authUserMiddleware, (req, res) => {
-    const { role } = req.authenticatedUser;
-    if (role !== 1) {
-      return res.status(401).send({
-        message: 'You are not authorized to perform this operation'
-      });
-    }
-    const { id, status } = req.body;
-    Site.findOne({ id }).then((site) => {
-      if (!site) {
-        return res.status(404)
-          .send({ message: 'Unable to find that entry' });
-      }
-      Site.update({ id }, { status })
-        .then(() => res.status(200)
-          .send({ message: 'Status updated successfully' }));
+  })
+  newform.on("end", function () {
+    console.log(newdir, tmpdir)
+    // fs.rename(tmpdir, newdir, function (err) {
+    //   if(err){
+    //     console.log(err)
+    //     res.json({ error: "upload was not successfully" })
+    //   }
+    //   else{
+    //     fs.rename(tmpdir, dir2, function (err) {
+    //       if (err) {
+    //         console.log(err)
+    //         res.json({ error: "upload was not successfully" })
+    //       }
+    //       else {
+    //         Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
+    //       }
+    //     })
+    //   }
+    // });
+    fs.rename(tmpdir, newdir, function () {
     });
-  });
+    fs.rename(tmpdir, dir2, function () {
+    });
+    Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
 
-  router.get('/user', authUserMiddleware, (req, res) => {
-    const { role } = req.authenticatedUser;
-    if (role !== 1) {
-      return res.status(401).send({
-        message: 'You are not authorized to perform this operation'
-      });
+  })
+
+});
+
+router.post('/confirm-payment', authUserMiddleware, (req, res) => {
+  const { role } = req.authenticatedUser;
+  if (role !== 1) {
+    return res.status(401).send({
+      message: 'You are not authorized to perform this operation'
+    });
+  }
+  const { id } = req.body;
+  Payout.findOne({ id }).then((payout) => {
+    if (!payout) {
+      return res.status(400)
+        .send({ message: 'Cannot find a payout with that id' });
     }
-    User.find().then(users => res.status(200).send({ users }))
-      .catch(err => res.status(400).send({ err }));
+    Payout.update({ id }, { status: 1 })
+      .then(() => {
+        History.update({ id }, { value: 1 }).then(() => res.status(200)
+          .send({ message: 'Payment request confirmed successfully' }));
+      });
   });
+});
+
+router.post('/confirm-site', authUserMiddleware, (req, res) => {
+  const { role } = req.authenticatedUser;
+  if (role !== 1) {
+    return res.status(401).send({
+      message: 'You are not authorized to perform this operation'
+    });
+  }
+  const { id, status } = req.body;
+  Site.findOne({ id }).then((site) => {
+    if (!site) {
+      return res.status(404)
+        .send({ message: 'Unable to find that entry' });
+    }
+    Site.update({ id }, { status })
+      .then(() => res.status(200)
+        .send({ message: 'Status updated successfully' }));
+  });
+});
+
+router.get('/user', authUserMiddleware, (req, res) => {
+  const { role } = req.authenticatedUser;
+  if (role !== 1) {
+    return res.status(401).send({
+      message: 'You are not authorized to perform this operation'
+    });
+  }
+  User.find().then(users => res.status(200).send({ users }))
+    .catch(err => res.status(400).send({ err }));
+});
 
 module.exports = router
