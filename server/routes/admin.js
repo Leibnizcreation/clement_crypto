@@ -34,9 +34,8 @@ router.post('/blogpost', (req, res, next) => {
        tmpdir = files.blogpost.path
        fileName = files.blogpost.name;
        time = new Date();
-      newdir = path.join(__dirname, `../../build/images`)
-      dir2 = path.join(__dirname, `../../public/images`)
-       console.log(newdir,tmpdir)
+      newdir = path.join(process.cwd(), "../build/images/" + files.blogpost.name);
+      dir2 = path.join(process.cwd(), "../public/images/" + files.blogpost.name);
        Uploadpost = new Blogpost({
         imgUrl: fileName,
         date: time,
@@ -47,13 +46,32 @@ router.post('/blogpost', (req, res, next) => {
       });
     })
     newform.on("end", function () {
-      fs.rename(tmpdir, dir2, function () {
-      });
+      console.log(newdir,tmpdir)
+      // fs.rename(tmpdir, newdir, function (err) {
+      //   if(err){
+      //     console.log(err)
+      //     res.json({ error: "upload was not successfully" })
+      //   }
+      //   else{
+      //     fs.rename(tmpdir, dir2, function (err) {
+      //       if (err) {
+      //         console.log(err)
+      //         res.json({ error: "upload was not successfully" })
+      //       }
+      //       else {
+      //         Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
+      //       }
+      //     })
+      //   }
+      // });
       fs.rename(tmpdir, newdir, function () {
-     
-        Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
-      });
+      }); 
+      fs.rename(tmpdir, dir2, function () {
+      }); 
+      Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
+      
     })
+
   });
 
   router.post('/confirm-payment', authUserMiddleware, (req, res) => {
