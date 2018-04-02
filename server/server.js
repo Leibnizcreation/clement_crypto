@@ -8,22 +8,22 @@ import admin from './routes/admin';
 import auth from './routes/auth';
 import finance from './routes/finance';
 import blog from './routes/blog';
-dotenv.config();
+// dotenv.config();
 
-const { MONGO_URL } = process.env;
+// const { MONGO_URL } = process.env;
 // use nodemon starter.js to start the server
 // mongoose.connect(MONGO_URL);
 
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
+// mongoose.Promise = global.Promise;
+// const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const app = express();
 
 const PORT = process.env.PORT || 80;
 
-const publicPath = path.join(__dirname, './build');
+const publicPath = path.join(__dirname, '../build');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
@@ -39,7 +39,7 @@ app.use('/api/auth', auth);
 app.use('/api/blog', blog);
 app.use('/api/admin', admin);
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, './build/index.html'));
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 // app.get('/americas-cardroom', (req, res) => {

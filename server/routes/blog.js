@@ -20,7 +20,7 @@ router.get('/recent', (req, res) => {
     .get("/search", (req, res, next) => {
         if (req.query.title) {
             var searchText = ` ${req.query.title} `;
-            Blogpost.find({ $text: { $search: searchText} }).sort({ views: -1 }).then((data) => { if (data) res.json({ result: data }); else res.json({ result: "empty" }) })
+            Blogpost.find({ $text: { $search: searchText } }).sort({ views: -1 }).then((data) => { if (data) res.status(200).send({ result: data }); else res.status(401).send({ result: "empty" }) })
         }
 
     })
@@ -28,8 +28,8 @@ router.get('/recent', (req, res) => {
 
         Blogpost.findOne({ slug: req.query.slug }).then((post) => {
             if (post) {
-                res.json({ success: post })
-            } else (res.json({ empty: "There are no blog post available" }))
+                res.status(200).send({ success: post })
+            } else (res.status(401).send({ empty: "There are no blog post available" }))
 
         })
     })

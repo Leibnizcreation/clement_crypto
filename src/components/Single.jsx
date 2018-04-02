@@ -37,7 +37,7 @@ class Single extends Component {
               <div className="col-md-9" style={{ borderRight: '1px solid #000080' }}>
                 <div className="single-post">
                   <div className="post-thumbnail">
-                    <img src={`../../images/${this.state.blogpost.imgUrl}`} />
+                    <img src={`${this.state.blogpost.imgUrl}`} />
                   </div>
                   <div className="post-content">
                     <h4 className="post-title"><a href="">{this.state.blogpost.title}</a></h4>

@@ -248,13 +248,13 @@ router.post('/contact', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
-      res.json({ "error": " failed" })
+      res.status(401).send({ "error": " failed" })
 
     }
     console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
     console.log(info);
-    res.json({ "success": "Contact form was sent Successfully" })
+    res.status(200).send({ "success": "Contact form was sent Successfully" })
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
@@ -303,18 +303,18 @@ router.post('/resetPassword', (req, res) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           return console.log(error);
-          res.json({ "error": " failed" })
+          res.status(401).send({ "error": " failed" })
 
         }
         console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
         User.findOneAndUpdate({ email }, { password: hashedPassword }).then((pass) => {
           if (pass) {
-            res.json({ "success": "true" })
+            res.status(200).send({ "success": "true" })
           }
         })
       })
-    } else res.json({ error: true })
+    } else res.status(401).send({ error: true })
   }
 
   );

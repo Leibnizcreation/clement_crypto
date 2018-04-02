@@ -101,7 +101,7 @@ class Blog extends Component {
                       <div className="col-sm-12">
                         <div className="post-list" key={key}>
                           <div className="post-thumbnail">
-                            <img src={`../../images/${post.imgUrl}`} />
+                            <img src={`${post.imgUrl}`} />
                           </div>
                           <div className="post-content">
                             <h4 className="post-title"><a href={`blog/${post.slug}`} style={{ textTransform: "capitalize" }}>{post.title}</a></h4>
@@ -116,7 +116,7 @@ class Blog extends Component {
                         <div className="col-sm-12">
                           <div className="post-list" key={key}>
                             <div className="post-thumbnail">
-                              <img src={`../../images/${post.imgUrl}`} />
+                              <img src={`${post.imgUrl}`} />
                             </div>
                             <div className="post-content">
                               <h4 className="post-title"><a href={`blog/${post.slug}`} style={{ textTransform: "capitalize" }}>{post.title}</a></h4>

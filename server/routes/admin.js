@@ -11,7 +11,12 @@ import User from '../models/user';
 import authUserMiddleware from './middlewares/authUserMiddleware';
 import fs from 'fs'
 const router = express.Router();
-
+import cloudinary from "cloudinary"
+cloudinary.config({
+  cloud_name: 'afrikal',
+  api_key: '345824351715158',
+  api_secret: '55TwfraW6ST15TGvq6tjHSF9NfA'
+})
 router.get('/', authUserMiddleware, (req, res) => {
   const { role } = req.authenticatedUser;
   if (role !== 1) {
@@ -30,46 +35,25 @@ router.post('/blogpost', (req, res, next) => {
   var newform = new formidable.IncomingForm();
   newform.keepExtensions = true;
   var tmpdir, fileName, time, newdir, Uploadpost, dir2;
+  
   newform.parse(req, (err, fields, files) => {
-    tmpdir = files.blogpost.path
-    fileName = files.blogpost.name;
-    time = new Date();
-    newdir = path.join(process.cwd(), "build/images/" + files.blogpost.name);
-    dir2 = path.join(process.cwd(), "../public/images/" + files.blogpost.name);
-    Uploadpost = new Blogpost({
-      imgUrl: fileName,
-      date: time,
-      slug: slugify(fields.title),
-      title: fields.title,
-      category: fields.category,
-      description: fields.description
-    });
-  })
-  newform.on("end", function () {
-    console.log(newdir, tmpdir)
-    // fs.rename(tmpdir, newdir, function (err) {
-    //   if(err){
-    //     console.log(err)
-    //     res.json({ error: "upload was not successfully" })
-    //   }
-    //   else{
-    //     fs.rename(tmpdir, dir2, function (err) {
-    //       if (err) {
-    //         console.log(err)
-    //         res.json({ error: "upload was not successfully" })
-    //       }
-    //       else {
-    //         Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
-    //       }
-    //     })
-    //   }
-    // });
-    fs.rename(tmpdir, newdir, function () {
-    });
-    fs.rename(tmpdir, dir2, function () {
-    });
-    Uploadpost.save().then().then((success) => { res.json({ success: "uploaded successfully" }) })
-
+   
+      cloudinary.uploader.upload(files.blogpost.path, function (result) {
+        if (result.url) {
+          let time = new Date();
+          Uploadpost = new Blogpost({
+            imgUrl: result.url,
+            date: time,
+            slug: slugify(fields.title),
+            title: fields.title,
+            category: fields.category,
+            description: fields.description
+          });
+          Uploadpost.save().then().then((success) => { res.status(200).send({ url: result.url, success: "uploaded successfully" }) })
+        } else {
+          res.status(401).send({ error: "Error uploading file" }); console.log("error uploading to cloudinary")
+        }
+      });
   })
 
 });

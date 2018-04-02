@@ -677,7 +677,7 @@ class Admin extends Component {
                     <h5>Add Blog Post</h5>
                     
                     {this.state.postSuccessful === true ? <div className="alert alert-success">Blog post was Successful</div>:null}
-                    {this.state.postSuccessful === false ? <div className="alert alert-danger">Blog post was not Successful, Please try again later</div>: null}
+                    {this.state.error ? <div className="alert alert-danger">Blog post was not Successful, Please try again later</div>: null}
                     <div className="history-list">
                       <FileUpload options={{
                         baseUrl: `${apiUrl}/api/admin/blogpost`,
