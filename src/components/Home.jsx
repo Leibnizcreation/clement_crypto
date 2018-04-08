@@ -269,7 +269,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            {/* <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -290,7 +290,7 @@ class Home extends Component {
 
             </small>
             </a>
-            </div>
+            </div> */}
 
           </div>
         </div>
