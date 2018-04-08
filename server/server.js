@@ -2,20 +2,25 @@ import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import mongoose from "./routes/config/mongoose"
+import mongoose from "mongoose"
 import users from './routes/users';
 import admin from './routes/admin';
 import auth from './routes/auth';
 import finance from './routes/finance';
 import blog from './routes/blog';
 // dotenv.config();
-
+// mongoose.connect("mongodb://guest:guest@ds121588.mlab.com:21588/clement_crpto")
+//   .then(function (conn) {
+//     console.log("connection to database was successful")
+//   }).catch(function (err) {
+//     console.log("Error connecting to database")
+//   })
 // const { MONGO_URL } = process.env;
 // use nodemon starter.js to start the server
 // mongoose.connect(MONGO_URL);
 
-// mongoose.Promise = global.Promise;
-// const db = mongoose.connection;
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
 
 // db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
