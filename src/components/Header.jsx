@@ -100,33 +100,33 @@ class Header extends Component {
             <div className="row">
               <div className="col-md-6">
                 <div className="logo">
-                  <a href="/">
+                  <a href="/" >
                     <img src="../../../../images/BTC_Grinders_logo.png" height="auto" width="250" />
                   </a>
                 </div>
                 <div className="currency-icons">
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 5px" }}>
                       <img src="../../../../images/icons/unnamed.png" height="35px" width="auto" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 5px" }}>
                       <img src="../../../../images/icons/22.png" height="35px" width="auto" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 5px" }}>
                       <img src="../../../../images/icons/55.png" height="35px" width="auto" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 5px" }}>
                       <img src="../../../../images/icons/44.png" height="35px" width="auto" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 5px" }}>
                       <img src="../../../../images/icons/bch1.png" height="35px" width="auto" />
                     </a>
                   </li>
@@ -201,10 +201,10 @@ class Header extends Component {
                               <br />
                               <ul className="reg-menu text-center">
                                 <li>
-                                  <a href="/contact">Contact Us</a>
+                                  <a href="/contact" >Contact Us</a>
                                 </li>
                                 <li>
-                                  <a href="/tos">Help</a>
+                                  <a href="/tos" >Help</a>
                                 </li>
                                 <li>
                                   <a href="/forgot-password">Forgot Password?</a>
@@ -230,7 +230,7 @@ class Header extends Component {
                     {!isAuthenticated && (
                       <li>
                         <a href="/contact">
-                          <font size="1">Contact Us</font>
+                          <font size="1" style={{ margin: "0px 10px" }}>Contact Us</font>
                         </a>
                       </li>
                     )}

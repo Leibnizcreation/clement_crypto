@@ -15,7 +15,7 @@ dotenv.config();
 
 const helper = require('sendgrid').mail;
 
-const { SENDGRID_API_KEY } = process.env;
+const SENDGRID_API_KEY = "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";
 const sg = require('sendgrid')(SENDGRID_API_KEY);
 
 const router = express.Router();
@@ -229,8 +229,8 @@ router.post('/contact', (req, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "habibmail31@gmail.com", // generated ethereal user
-      pass: "k1o2l3a4" // generated ethereal password
+      user: "btcgrindshare@gmail.com", // generated ethereal user
+      pass: "JJJaaaaagrind123$" // generated ethereal password
     }
   });
 
@@ -247,18 +247,18 @@ router.post('/contact', (req, res) => {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return console.log(error);
+      console.log('Message sent: %s', info.messageId);
       res.status(401).send({ "error": " failed" })
-
+    } else{
+      console.log(info)
+      res.status(200).send({ "success": "Contact form was sent Successfully" })
     }
-    console.log('Message sent: %s', info.messageId);
     // Preview only available when sending through an Ethereal account
-    console.log(info);
-    res.status(200).send({ "success": "Contact form was sent Successfully" })
 
     // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   });
+
 });
 router.post('/resetPassword', (req, res) => {
   const { email} = req.body;
@@ -270,20 +270,17 @@ router.post('/resetPassword', (req, res) => {
         numbers: true
       });
       const hashedPassword = bcrypt.hashSync(password);
-
       const nodemailer = require('nodemailer');
       let transporter = nodemailer.createTransport({
-      
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true, // true for 465, false for other ports
         tls: {
           rejectUnauthorized: false
         },
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
         auth: {
-          user: "habibmail31@gmail.com", // generated ethereal user
-          pass: "k1o2l3a4" // generated ethereal password
-          // pass: "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" // generated ethereal password
+          user: "btcgrindshare@gmail.com", // generated ethereal user
+          pass: "JJJaaaaagrind123$" // generated ethereal password
         }
       });
       // setup email data with unicode symbols
@@ -292,7 +289,7 @@ router.post('/resetPassword', (req, res) => {
             <p>Thank you!</p>
           `;
       const mailOptions = {
-        from: `info@btcgrinders.com`, // sender address
+        from: `support@btcgrinders.com`, // sender address
         to: `${email}`, // list of receivers
         subject: `Password Reset`, // Subject line
         // text: `${message}`, // plain text body
@@ -302,17 +299,18 @@ router.post('/resetPassword', (req, res) => {
       };
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          return console.log(error);
+          console.log('Message sent: %s', info.messageId);
           res.status(401).send({ "error": " failed" })
-
+        }else{
+          User.findOneAndUpdate({ email }, { password: hashedPassword }).then((pass) => {
+            if (pass) {
+              console.log(info)
+              res.status(200).send({ "success": "true" })
+            }
+          })
         }
-        console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
-        User.findOneAndUpdate({ email }, { password: hashedPassword }).then((pass) => {
-          if (pass) {
-            res.status(200).send({ "success": "true" })
-          }
-        })
+        
       })
     } else res.status(401).send({ error: true })
   }

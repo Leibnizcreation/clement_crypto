@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/footer';
 import Subnav from './components/Subnav';
 import Dashboard from './components/Dashboard';
 import Admin from './components/Admin';
@@ -62,7 +63,7 @@ const App = () => (
                     <AuthContainer exact path="/admin" name="admin" Comp={Admin} />
                 </Switch>
             </div>
-            {/* <Footer /> */}
+            <Footer />
         </div>
 );
 

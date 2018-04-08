@@ -11,7 +11,7 @@ class Home extends Component {
         <div className="container">
           <div className="row brand">
             <div className="col-md-4">
-              <a href="/blackchip-poker"><img src="../../../../images/bccc.png" />
+              <a href="/blackchip-poker"><img src="images/bccc.png" />
                 <br /><br />
                 <small>
                   <u><b><font face="verdana">Rakeback</font></b></u>
@@ -30,16 +30,16 @@ class Home extends Component {
                   </ul>
                   <br />
 
-                  <img src="../../../../images/legend1.png" />
+                  <img src="images/legend1.png" />
 
-                  <img src="../../../../images/197484.png" />
+                  <img src="images/197484.png" />
 
                 </small>
               </a>
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -55,7 +55,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -63,7 +63,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><br /><a href="/swc"><img src="../../../../images/swc1.png" />   <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><br /><a href="/swc"><img src="images/swc1.png" />   <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -78,12 +78,12 @@ class Home extends Component {
               </ul>
 
 
-              <img src="../../../../images/swclegend.png" />
+              <img src="images/swclegend.png" />
 
             </small>
             </a>
             </div>
-            <div className="col-md-4"><a href="/betonline"><img src="../../../../images/04.png" />  <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/betonline"><img src="images/04.png" />  <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <ul>
                 <li>▪ 12.5% (Exclusive)</li>
                 <li>▪ $</li>
@@ -97,7 +97,7 @@ class Home extends Component {
             </small>
             </a>
             </div>
-            <div className="col-md-4"><a href="/intertoops"><img src="../../../../images/05.png" />   <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/intertoops"><img src="images/05.png" />   <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
 
               <ul>
                 <li>▪ 36% (Exclusive)</li>
@@ -111,7 +111,7 @@ class Home extends Component {
             </small>
             </a>
             </div>
-            <div className="col-md-4"><a href="/nitrogensports"><img src="../../../../images/06.png" />  <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/nitrogensports"><img src="images/06.png" />  <br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <ul>
                 <li>▪ 1-70% (Exclusive)</li>
                 <li>▪ $100-1000 monthly (Exclusive)</li>
@@ -125,7 +125,7 @@ class Home extends Component {
             </a>
             </div>
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -141,7 +141,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -149,7 +149,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -165,7 +165,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -173,7 +173,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -189,7 +189,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -197,7 +197,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -213,7 +213,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -221,7 +221,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -237,7 +237,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>
@@ -245,7 +245,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -269,7 +269,7 @@ class Home extends Component {
             </div>
 
 
-            <div className="col-md-4"><a href="/americas-cardroom"><img src="../../../../images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
+            <div className="col-md-4"><a href="/americas-cardroom"><img src="images/aacr.png" />  <br /><br /><small><u><b><font face="verdana">Rakeback</font></b></u>
               <br />
 
               <ul>
@@ -285,7 +285,7 @@ class Home extends Component {
               </ul>
               <br />
 
-              <img src="../../../../images/legend1.png" />
+              <img src="images/legend1.png" />
 
 
             </small>

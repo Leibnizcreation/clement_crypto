@@ -41,7 +41,7 @@ class ForgotPassword extends Component {
   }
   render(){
 return (
-  <section id="main" className="sec-pad">
+  <section id="main" className="sec-pad" style={{padding:"100px 0px 0px"}}>
     <div className="container">
       <div className="row text-center">
         <div style={{ width: '40%', margin: '0 auto' }}>

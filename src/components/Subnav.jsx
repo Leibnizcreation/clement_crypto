@@ -98,30 +98,30 @@ class Subnav extends Component {
                   </li>
                 </ul>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2" style={{padding:"0px"}}>
                 <ul className="main-menu-socail">
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 2px" }} >
                       <i className="fa fa-facebook" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 2px" }}>
                       <i className="fa fa-twitter" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 2px" }}>
                       <i className="fa fa-youtube" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 2px" }}>
                       <i className="fa fa-google-plus" />
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{ margin: "0px 2px" }}>
                       <i className="fa fa-instagram" />
                     </a>
                   </li>
@@ -149,7 +149,7 @@ class Subnav extends Component {
                     ) : (
                       <li>
                         <a data-toggle="modal" data-target="#login-modal" className="login-item"> Login </a>
-                        <i className="fa fa-user" />
+                        <i className="fa fa-user" style={{margin:"0px 5px"}} />
                         {/* <% } %> */}
                         {/* <!-- The Modal --> */}
                         <div className="modal fade" id="login-modal">
